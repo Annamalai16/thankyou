@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To the person I like the most..</title>
+    <style>
+        .bg {
+            /* The image used */
+            background-image: url("https://i.pinimg.com/originals/12/4d/e3/124de3d1b5e12f1d8fcec1685e634361.gif");
+
+            /* Full height */
+            height: 100vh; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: fit-content;
+            height: fit-content;
+            font-size: 100px;
+            text-align: center;
+            font-family: 'Brush Script MT';
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="card">
+            <span id="line0"></span>
+            <br>
+            <span id="line1"></span>
+            <br>
+            <span id="line2"></span>
+            <span id="emoji" style="display: none;">🫶🏾</span>
+    </div>
+    <script>
+        let i = 0;
+        let j = 0;
+        text = ["Thank You", "so much Pooja!", "This means a lot."]
+        var loader = setInterval(() => {
+            document.getElementById('line' + i).innerHTML += text[i][j]
+            j++;
+            if(j == text[i].length) {
+                j = 0;
+                i++;
+            }
+            if( i == text.length) {
+               stopLoader() 
+            }
+        },100);
+
+        function stopLoader() {
+            clearInterval(loader)
+            document.getElementById("emoji").style.display = "block";
+
+        }
+    </script>
+</body>
+</html>
